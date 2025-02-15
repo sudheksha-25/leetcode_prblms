@@ -1,0 +1,46 @@
+class Node{
+    int data;
+    Node next;
+    Node pre;
+    
+    public Node(int data){
+    this.data=data;
+    this.next=null;
+    this.pre=null;
+    }
+}
+class Main{
+    static void forwardTraversal(Node head){
+    Node curr=head;
+    {
+        while(curr !=null){
+            System.out.println(curr.data);
+            curr=curr.next;
+        }
+    }
+    }
+    static void backwardTraversal(Node tail){
+        Node curr=tail;
+        {
+            while(curr!=null){
+                System.out.println(curr.data);
+                curr=curr.pre;
+            }
+        }
+    }
+    public static void main(String[] args){
+        Node head=new Node(1);
+        Node s=new Node(2);
+        Node t=new Node(3);
+        
+        head.next=s;
+        s.pre=head;
+        s.next=t;
+        t.pre=s;
+        
+        System.out.println("Forward Traversal: ");
+        forwardTraversal(head);
+        System.out.println("BackWard Traversal: ");
+        backwardTraversal(t);
+    }
+}
